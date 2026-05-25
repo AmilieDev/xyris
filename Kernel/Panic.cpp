@@ -28,7 +28,7 @@
 #define PANIC_REG_DUMP_MSG "Kernel exception - Dumping register state..."
 
 const char *funnyMessagesForMoo[] = {
-    "Oh, it’s you. It’s been a long time.\nHow have you been?",
+    "Oh, it's you. It's been a long time.\nHow have you been?",
     "Sorry, I accidentally let the magic smoke out.",
     "Not sure how we got here, but here we are.",
     "Whatever you just did, don't do it again.",
