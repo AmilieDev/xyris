@@ -2,6 +2,7 @@
  * @file graphics.cpp
  * @author Keeton Feavel (keetonfeavel@cedarville.edu)
  * @author Michel (JMallone) Gomes (michels@utfpr.edu.br)
+ * @author Amilie Baker (amiliefn@gmail.com)
  * @brief Graphics management and control
  * @version 0.2
  * @date 2021-07-24
@@ -11,6 +12,7 @@
  * References:
  *     https://wiki.osdev.org/Double_Buffering
  *     https://github.com/skiftOS/skift/blob/main/kernel/system/Graphics/Graphics.cpp
+ *     https://en.cppreference.com/cpp/thread/lock_guard
  *
  */
 #include <Devices/Graphics/graphics.hpp>
@@ -23,6 +25,7 @@
 #include <Library/string.hpp>
 #include <Logger.hpp>
 #include <Locking/RAII.hpp>
+#include <Arch/i686/timer.hpp>
 
 namespace Graphics {
 
@@ -47,7 +50,6 @@ void init(Framebuffer* fb)
     // Alloc the backbuffer
     backbuffer = malloc(info->getPitch() * info->getHeight());
     memcpy(backbuffer, info->getAddress(), info->getPitch() * info->getHeight());
-
     initialized = true;
 }
 
