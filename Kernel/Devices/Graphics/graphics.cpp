@@ -22,6 +22,7 @@
 #include <Library/stdio.hpp>
 #include <Library/string.hpp>
 #include <Logger.hpp>
+#include <Locking/RAII.hpp>
 
 namespace Graphics {
 
@@ -83,17 +84,37 @@ void putrect(uint32_t x, uint32_t y, uint32_t w, uint32_t h, uint32_t color)
     swap();
 }
 
+/*
+    I'd advise reading https://en.cppreference.com/cpp/thread/lock_guard for info about Mutex.
+    Saved me a lot of pain and taught it very easy.
+
+    - Ami, 25/05/26
+*/
+Mutex mutex_backbufferAccess("backbuffer");
+
 void resetDoubleBuffer()
 {
-    if (!initialized)
+    Logger::Debug(__func__, "aquiring lock");
+    RAIIMutex lock(mutex_backbufferAccess);
+    Logger::Debug(__func__, "locked");
+
+    if (!initialized){
+        Logger::Debug(__func__, "releasing");
         return;
+    }
     memset(backbuffer, 0, (info->getPitch() * info->getHeight()));
 }
 
 void swap()
 {
-    if (!initialized)
+    Logger::Debug(__func__, "aquiring lock");
+    RAIIMutex lock(mutex_backbufferAccess);
+    Logger::Debug(__func__, "locked");
+
+    if (!initialized){
+        Logger::Debug(__func__, "releasing");
         return;
+    }
     memcpy(info->getAddress(), backbuffer, (info->getPitch() * info->getHeight()));
 }
 
