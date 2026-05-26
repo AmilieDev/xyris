@@ -1,9 +1,9 @@
 /**
- * @file fbtest.hpp
+ * @file piper.hpp
  * @author Amilie Baker (amiliefn@gmail.com)
- * @brief Simple framebuffer tester.
- * @version 0.3
- * @date 2026-05-25
+ * @brief A piping test / solution to ensure IPC works.
+ * @version 0.2
+ * @date 2026-05-26
  *
  * @copyright Copyright the Xyris Contributors (c) 2026
  *
@@ -13,9 +13,9 @@
 namespace Apps {
 
 /**
- * @brief Test framebuffer
+ * @brief Test Piping solution
  *
  */
-void fbtest();
+void piper();
 
 }

@@ -1,6 +1,6 @@
 /**
- * @file entry.cpp
- * @author Amilie Baker(amiliefn@gmail.com)
+ * @file fbtest.cpp
+ * @author Amilie Baker (amiliefn@gmail.com)
  * @brief Simple framebuffer tester.
  * @version 0.2
  * @date 2026-05-25
@@ -15,11 +15,11 @@
 
 namespace Apps {
 
-void fbtest()
-{
-    while (true) {
-        sleep(100);
-        Graphics::resetDoubleBuffer();
+    void fbtest()
+    {
+        while (true) {
+            sleep(100);
+            Graphics::resetDoubleBuffer();
+        }
     }
-}
 }
