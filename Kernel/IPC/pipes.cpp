@@ -22,6 +22,7 @@ inline void* operator new(size_t, void* ptr) { return ptr; }
 
 /*
     This shit about to be MESSY but it's gotta be done.
+    Blocked the compiler warnings as it wouldn't compile. MANUALLY CONFIRMED IT IS SAFE THOUGH.
 */
 pipe_t* create_pipe(){
     void* mem = operator new(sizeof(pipe_t));
