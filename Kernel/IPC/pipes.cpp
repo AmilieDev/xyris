@@ -6,6 +6,10 @@
  * @date 2026-05-26
  *
  * @copyright Copyright the Xyris Contributors (c) 2026
+ * @ref https://github.com/mit-pdos/xv6-public/blob/master/pipe.c
+ * @ref https://www.usna.edu/Users/cs/wcbrown/courses/IC221/classes/L13/Class.html
+ * @ref https://wiki.osdev.org/Message_Passing
+ * @ref https://github.com/mit-pdos/xv6-public/blob/master/pipe.c
  *
  */
 

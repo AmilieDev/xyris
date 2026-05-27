@@ -10,6 +10,7 @@
  */
 
 #include <IPC/pipes.hpp>
+#include <IPC/messages.hpp>
 #include <Devices/Graphics/console.hpp>
 #include <Applications/piper.hpp>
 
@@ -42,5 +43,32 @@ namespace Apps {
                 
         close_pipe(p, true);
         close_pipe(p, false);
+
+        msg_queue_t* q = create_msg();
+
+        msg_t send;
+        send.sender_id = 1;
+        send.type_id = 42;
+        send.payload[0] = 'H';
+        send.payload[1] = 'i';
+
+        write_msg(q, &send);
+        msg_t recv;
+        read_msg(q, &recv);
+
+        bool msg_passed = true;
+        if (recv.sender_id != send.sender_id) msg_passed = false;
+        if (recv.type_id != send.type_id) msg_passed = false;
+        if (recv.payload[0] != send.payload[0]) msg_passed = false;
+        if (recv.payload[1] != send.payload[1]) msg_passed = false;
+
+        if (msg_passed) {
+            Console::printf("Passed Message Test!\n");
+        } else {
+            Console::printf("Failed Message Test!\n");
+        }
+
+        close_msg(q, true);
+        close_msg(q, false);
     }
 }
