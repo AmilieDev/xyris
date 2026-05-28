@@ -9,9 +9,9 @@
  *
  */
 #include <Arch/Arch.hpp>
-#include <Arch/i686/idt.hpp>
-#include <Arch/i686/isr.hpp>
-#include <Arch/i686/Assembly/Interrupts.h>
+#include <Arch/x86_64/idt.hpp>
+#include <Arch/x86_64/isr.hpp>
+#include <Arch/x86_64/Assembly/Interrupts.h>
 #include <Panic.hpp>
 
 namespace Interrupts {

@@ -8,8 +8,8 @@
  * @copyright Copyright the Xyris Contributors (c) 2019
  *
  */
-#include <Arch/i686/idt.hpp>
-#include <Arch/i686/regs.hpp>
+#include <Arch/x86_64/idt.hpp>
+#include <Arch/x86_64/regs.hpp>
 
 #define ARCH_IDT_MAX_ENTRIES 256
 

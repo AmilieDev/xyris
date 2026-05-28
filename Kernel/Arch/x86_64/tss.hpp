@@ -9,8 +9,8 @@
  *
  */
 #pragma once
-#include <Arch/i686/Arch.i686.hpp>
-#include <Arch/i686/Assembly/Flush.h>
+#include <Arch/x86_64/Arch.x86_64.hpp>
+#include <Arch/x86_64/Assembly/Flush.h>
 #include <stdint.h>
 
 /**

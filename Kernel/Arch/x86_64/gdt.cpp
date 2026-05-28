@@ -8,8 +8,8 @@
  * @copyright Copyright the Xyris Contributors (c) 2019
  *
  */
-#include <Arch/i686/gdt.hpp>
-#include <Arch/i686/Assembly/Flush.h>
+#include <Arch/x86_64/gdt.hpp>
+#include <Arch/x86_64/Assembly/Flush.h>
 #include <Library/string.hpp>
 
 #define ARCH_GDT_MAX_ENTRIES 5

@@ -8,8 +8,8 @@
  * @copyright Copyright the Xyris Contributors (c) 2019
  *
  */
-#include <Arch/i686/timer.hpp>
-#include <Arch/i686/isr.hpp>
+#include <Arch/x86_64/timer.hpp>
+#include <Arch/x86_64/isr.hpp>
 
 static void timer_callback(struct registers *regs);
 volatile uint32_t timer_tick;

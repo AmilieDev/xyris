@@ -15,22 +15,24 @@
         - Setup correct Assembly.
 */
 
-// Architecture (i686) specific header
-#include <Arch/i686/Arch.hpp>
-#include <Arch/i686/regs.hpp>
-#include <Arch/i686/gdt.hpp>
-#include <Arch/i686/idt.hpp>
-#include <Arch/i686/isr.hpp>
-#include <Arch/i686/ports.hpp>
-#include <Arch/i686/timer.hpp>
+// Architecture (x86_64) specific header
+#include <Arch/x86_64/Arch.hpp>
+#include <Arch/x86_64/regs.hpp>
+#include <Arch/x86_64/gdt.hpp>
+#include <Arch/x86_64/idt.hpp>
+#include <Arch/x86_64/isr.hpp>
+#include <Arch/x86_64/ports.hpp>
+#include <Arch/x86_64/timer.hpp>
 #include <cpuid.h>
 #include <stddef.h>
 #include <stdint.h>
+
 // Architecture agnostic header
 #include <Arch/Arch.hpp>
 #include <Arch/Memory.hpp>
 #include <cpuid.h>
 // Helper functions
+
 #include <Library/stdio.hpp>
 #include <Devices/Graphics/console.hpp>
 #include <Devices/Serial/rs232.hpp>

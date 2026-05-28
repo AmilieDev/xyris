@@ -8,7 +8,7 @@
  * @copyright Copyright the Xyris Contributors (c) 2020
  *
  */
-#include <Arch/i686/ports.hpp>
+#include <Arch/x86_64/ports.hpp>
 
 uint8_t readByte(uint16_t port) {
     uint8_t result;
